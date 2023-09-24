@@ -4,12 +4,7 @@ include("vgui/dlabel.lua")
 include("vgui/dtextentry.lua")
 
 
-
-
-
--- Gestionnaire de réseau pour ouvrir l'interface utilisateur de changement de nom et prénom
 net.Receive("OuvrirInterfaceChangementNomPrenom", function(ply)
-    -- Code pour ouvrir l'interface de changement de nom et prénom côté client
     local function OuvrirInterfaceChangementNomPrenom()
         
 
@@ -18,8 +13,8 @@ net.Receive("OuvrirInterfaceChangementNomPrenom", function(ply)
         frame:SetTitle("Enter your Firstname and Name")
         frame:SetVisible(true)
         frame:Center()
-        frame:SetDraggable(false) -- Empêche de déplacer la fenêtre
-        frame:ShowCloseButton(false) -- Désactive le bouton de fermeture
+        frame:SetDraggable(false)
+        frame:ShowCloseButton(false)
 
         local labelError = vgui.Create("DLabel", frame)
         labelError:SetText("")
@@ -54,7 +49,7 @@ net.Receive("OuvrirInterfaceChangementNomPrenom", function(ply)
             end
         end
 
-        -- Action à effectuer lorsque le bouton OK est cliqué
+        -- If ok is clicked
         btnOK.DoClick = function()
             local newName = txtNom:GetValue()
             local newFirstName = txtPrenom:GetValue()
@@ -63,9 +58,8 @@ net.Receive("OuvrirInterfaceChangementNomPrenom", function(ply)
                 net.WriteString(newName)
                 net.WriteString(newFirstName)
                 net.SendToServer()
-                -- Insérez ici le code pour traiter le nom et le prénom
                 
-                frame:Close() -- Ferme la fenêtre après avoir traité les données
+                frame:Close()
             else
                 labelError:SetText("Error, Firstname or Name empty")
             end
@@ -75,7 +69,6 @@ net.Receive("OuvrirInterfaceChangementNomPrenom", function(ply)
         frame:MakePopup()
     end
 
-    -- Appelez la fonction pour ouvrir l'interface utilisateur
     OuvrirInterfaceChangementNomPrenom()
 end)
 
