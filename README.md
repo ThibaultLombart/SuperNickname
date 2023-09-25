@@ -13,9 +13,9 @@ and drag and drop your ```.zip``` file. Extract here and it's installed.
 
 To configure this addon, you have to go on your server, if you want to change the rpname of a job, just change your job and :
 
-```/nickname 'nickname'```
+```/supernickname 'nickname'```
 
-This is now permanently change, you can update it with an other ```/nickname 'nickname'```. If you want to delete one nickname, just go to ```steamapps\common\GarrysMod\garrysmod\data\SuperNickname\jobs_nickname.json``` and change the job you don't want.
+This is now permanently change, you can update it with an other ```/supernickname 'nickname'```. If you want to delete one nickname, just go to ```steamapps\common\GarrysMod\garrysmod\data\SuperNickname\jobs_nickname.json``` and change the job you don't want.
 
 
 ## Wiki 
@@ -35,6 +35,20 @@ To get random number between 1 and 9999 : ```r0{4}```
 To get random number between 1 and 99999 : ```r0{5}```
 
 To change your informations in game : ```dev console```(F10) and write : ```change_name```
+
+## Examples 
+
+Mayor :
+/supernickname Mayor {name}
+
+Class D :
+/supernickname Class-D r0{4}
+
+Doctor :
+/supernickname Dr. {name}
+
+Citizen :
+/supernickname {firstname} {name}
 
 ## Future Updates
 
