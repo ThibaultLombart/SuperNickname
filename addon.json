@@ -1,0 +1,13 @@
+{
+    "title": "SuperNickname",
+    "description": "",
+    "type": "servercontent",
+    "tags": [
+        "roleplay",
+        "realism"
+    ],
+    "ignore": [
+        ".git/*",
+        "README.md"
+    ]
+}

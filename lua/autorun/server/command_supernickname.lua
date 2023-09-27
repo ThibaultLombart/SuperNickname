@@ -9,13 +9,13 @@ local function commandSupernickname(ply, args)
 
         if text and text ~= "" then
             local job = ply:getDarkRPVar('job')
-            ply:ChatPrint("Nickname : " .. text .. " for job : " .. job)
+            ply:ChatPrint(Supernickname_nickname .. text .. Supernickname_forjob .. job)
             WriteNickName(job,text)
         else
-            ply:ChatPrint("Please write something.")
+            ply:ChatPrint(Supernickname_write)
         end
     else
-        ply:ChatPrint("You must be Superadmin to execute this command.")
+        ply:ChatPrint(Supernickname_superadmin)
     end
 end
 

@@ -13,16 +13,7 @@ function CheckDuplicateRPNames(rpNameSearched)
     return false
 end
 
-
-
-
-
-
-hook.Add("OnPlayerChangedTeam","ChangedTeamInfo",function(ply, before, after)
-    local value = ReadNickName(ply:getDarkRPVar('job'))
-    local name = ply:GetUPData("name")
-    local firstName = ply:GetUPData("firstname")
-
+function ChangeName(ply,value,name,firstName)
     if value then
         local result = value:gsub("{name}", name)
         result = result:gsub("{firstname}", firstName)
@@ -40,7 +31,7 @@ hook.Add("OnPlayerChangedTeam","ChangedTeamInfo",function(ply, before, after)
                 end
             until compteur < 20
             if compteur == 20 then
-                print('Too much iterations during random naming.')
+                print(prefix .. 'Too much iterations during random naming.')
             else
                 result = test
             end
@@ -56,11 +47,11 @@ hook.Add("OnPlayerChangedTeam","ChangedTeamInfo",function(ply, before, after)
                 end
             until compteur < 100
             if compteur == 100 then
-                print('Too much iterations during random naming.')
+                print(prefix .. 'Too much iterations during random naming.')
             else
                 result = test
             end
-        
+            
         elseif string.find(value, "r0{3}") then
             local compteur = 0
             repeat
@@ -72,11 +63,11 @@ hook.Add("OnPlayerChangedTeam","ChangedTeamInfo",function(ply, before, after)
                 end
             until compteur < 100
             if compteur == 100 then
-                print('Too much iterations during random naming.')
+                print(prefix .. 'Too much iterations during random naming.')
             else
                 result = test
             end
-        
+            
         elseif string.find(value, "r0{4}") then
             local compteur = 0
             repeat
@@ -88,11 +79,11 @@ hook.Add("OnPlayerChangedTeam","ChangedTeamInfo",function(ply, before, after)
                 end
             until compteur < 100
             if compteur == 100 then
-                print('Too much iterations during random naming.')
+                print(prefix .. 'Too much iterations during random naming.')
             else
                 result = test
             end
-        
+            
         elseif string.find(value, "r0{5}") then
             local compteur = 0
             repeat
@@ -104,13 +95,13 @@ hook.Add("OnPlayerChangedTeam","ChangedTeamInfo",function(ply, before, after)
                 end
             until compteur < 100
             if compteur == 100 then
-                print('Too much iterations during random naming.')
+                print(prefix .. 'Too much iterations during random naming.')
             else
                 result = test
             end
         end
 
-        
+            
         if(ply:getDarkRPVar('rpname') ~= result) then
             ply:setRPName(result)
             ply:SetNWString("rpname", result)
@@ -121,6 +112,17 @@ hook.Add("OnPlayerChangedTeam","ChangedTeamInfo",function(ply, before, after)
             ply:SetNWString("rpname", firstName .. " " .. name)
         end
     end
+end
+
+
+
+
+hook.Add("OnPlayerChangedTeam","ChangedTeamInfo",function(ply, before, after)
+    local value = ReadNickName(ply:getDarkRPVar('job'))
+    local name = ply:GetUPData("name")
+    local firstName = ply:GetUPData("firstname")
+    
+    ChangeName(ply,value,name,firstName)
 
 
 end)

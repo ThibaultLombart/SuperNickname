@@ -15,7 +15,7 @@ local function readFileJSON()
         end
         return result
     else
-        print('Return Null when readFileJSON')
+        print(prefix .. 'Return Null when readFileJSON')
         return nil
     end
 
@@ -33,7 +33,7 @@ local function writeFileJSON(table)
             fileJobs:Close()
         end
     else
-        print('Error when writeFileJSON')
+        print(prefix .. 'Error when writeFileJSON')
     end
 end
 
@@ -46,6 +46,6 @@ function WriteNickName(keys,value)
         table[keys] = value
         writeFileJSON(table)
     else
-        print("Error when WriteNickName")
+        print(prefix .. "Error when WriteNickName")
     end
 end
