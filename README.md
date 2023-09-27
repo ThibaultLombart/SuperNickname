@@ -60,4 +60,3 @@ Citizen :
 ## Future Updates
 
 - -- Admin -- Force Change Firstname and Name of a player.
-- -- Admin -- Configurations files for Languages.
