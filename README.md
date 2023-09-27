@@ -19,7 +19,7 @@ This is now permanently change, you can update it with an other ```/supernicknam
 
 
 ## Wiki 
-
+### /supernickname
 To get Firstname : ```{firstname}```
 
 To get Name : ```{name}```
@@ -35,6 +35,13 @@ To get random number between 1 and 9999 : ```r0{4}```
 To get random number between 1 and 99999 : ```r0{5}```
 
 To change your informations in game : ```dev console```(F10) and write : ```change_name```
+
+### Languages
+To change the addon language, you have to go to ```steamapps\common\GarrysMod\garrysmod\data\SuperNickname\languages\```.
+
+To change your current_language, just go in the file ```current_language.json``` and change 'en' by 'fr' or any language you add to the file 'languages'
+
+To add your language, you have to copy/paste an existing language file, edit with your language and rename the file by 'ru.json' if you are russian for example, after you have to change 'en' by 'ru' in the file 'current_file.json'.
 
 ## Examples 
 
