@@ -1,4 +1,4 @@
-local function IsSuperAdmin(ply)
+function IsSuperAdmin(ply)
     return IsValid(ply) and ply:IsSuperAdmin()
 end
 
