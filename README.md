@@ -43,6 +43,10 @@ To change your current_language, just go in the file ```current_language.json```
 
 To add your language, you have to copy/paste an existing language file, edit with your language and rename the file by 'ru.json' if you are russian for example, after you have to change 'en' by 'ru' in the file 'current_file.json'.
 
+### ForceName
+
+If you want to force the ChangeName gui on a player, you have to do ```/forcename 'steamid'```.
+
 ## Examples 
 
 Mayor :
