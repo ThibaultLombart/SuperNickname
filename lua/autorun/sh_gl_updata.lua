@@ -20,18 +20,18 @@ if not GlorifiedUPData or GlorifiedUPData.Version < updataVersion then
 
     local sql_Query = sql.Query
 
-    if not sql.TableExists( "glorifiedupdata" ) then
-        sql_Query( "CREATE TABLE IF NOT EXISTS glorifiedupdata ( key TEXT NOT NULL PRIMARY KEY, value TEXT );" )
+    if not sql.TableExists( "supernickname_players" ) then
+        sql_Query( "CREATE TABLE IF NOT EXISTS supernickname_players ( key TEXT NOT NULL PRIMARY KEY, value TEXT );" )
     end
 
     function plyMeta:SetUPData( key, value )
         key = Format( "%s[%s]", self:SteamID64(), key )
-        sql_Query( "REPLACE INTO glorifiedupdata ( key, value ) VALUES ( " .. SQLStr( key ) .. ", " .. SQLStr( value ) .. " )" )
+        sql_Query( "REPLACE INTO supernickname_players ( key, value ) VALUES ( " .. SQLStr( key ) .. ", " .. SQLStr( value ) .. " )" )
     end
 
     function plyMeta:GetUPData( key, default )
         key = Format( "%s[%s]", self:SteamID64(), key )
-        local val = sql.QueryValue( "SELECT value FROM glorifiedupdata WHERE key = " .. SQLStr( key ) .. " LIMIT 1" )
+        local val = sql.QueryValue( "SELECT value FROM supernickname_players WHERE key = " .. SQLStr( key ) .. " LIMIT 1" )
 
         if val == nil then return default end
         return val

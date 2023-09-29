@@ -14,6 +14,9 @@ net.Receive("OuvrirInterfaceChangementNomPrenom", function(len, ply)
     if newName and newName ~= "" and newFirstName and newFirstName ~= "" then
 
         local value = ReadNickName(ply:getDarkRPVar('job'))
+
+        ply:SetUPData("name",newName);
+        ply:SetUPData("firstname",newFirstName);
         
         ChangeName(ply,value,newName,newFirstName)
 

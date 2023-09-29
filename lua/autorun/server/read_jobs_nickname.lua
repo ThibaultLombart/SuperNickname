@@ -18,7 +18,7 @@ function ReadNickName(keySearched)
             return nil
         
         else
-            print(prefix .. "Impossible to decode JSON")
+            return nil
         end
     else
         print(prefix .. "Impossible to open this file ")

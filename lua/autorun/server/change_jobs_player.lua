@@ -15,6 +15,7 @@ end
 
 function ChangeName(ply,value,name,firstName)
     if value then
+        print(value)
         local result = value:gsub("{name}", name)
         result = result:gsub("{firstname}", firstName)
 
